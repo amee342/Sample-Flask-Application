@@ -26,6 +26,14 @@ def form():
         return f"Hope you have a nice day, {name}!"
     else:
         return render_template('form.html')
+    
+@app.route("/submit", methods=['GET', 'POST'])
+def submit():
+    if request.method=='POST':
+        name = request.form['name']
+        return f"Hope you have a nice day, {name}!"
+    else:
+        return render_template('form.html')
 
 
 if __name__=="__main__":
